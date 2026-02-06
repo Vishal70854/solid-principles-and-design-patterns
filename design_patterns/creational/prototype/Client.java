@@ -8,12 +8,20 @@ public class Client {
         networkConnection.setIp("192.163.1.2");
         networkConnection.loadVeryImportantData();
 
-        System.out.println(networkConnection);
 
         // we want clone object of NetworkConnection
         try {
+            // by default networkConnection.clone() will do a shallow copy() cloning
             NetworkConnection networkConnection2 = (NetworkConnection) networkConnection.clone();
+            NetworkConnection networkConnection3 = (NetworkConnection) networkConnection.clone();
+
+            System.out.println(networkConnection);
+            // lets try removing something from networkConnection alon
+            networkConnection.getDomains().remove(0);
+            System.out.println("removed 1st domain from domains for implementing deep copy \n" + networkConnection);
+
             System.out.println(networkConnection2);
+            System.out.println(networkConnection3);
        } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
