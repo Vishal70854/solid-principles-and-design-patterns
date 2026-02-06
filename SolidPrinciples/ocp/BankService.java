@@ -25,7 +25,7 @@ public class BankService {
 
         BankService bankService = new BankService();
         LoanService loanService = new LoanService();
-        NotificationService notificationService = new NotificationService();
+        NotificationService notificationService = new EmailNotificationService();
         PrinterService printerService = new PrinterService();
 
         bankService.deposit(10,"abc");
